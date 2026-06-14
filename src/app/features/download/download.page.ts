@@ -1,9 +1,11 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, OnDestroy, OnInit, PLATFORM_ID, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
 import { AdSlotComponent } from '../../shared/components/ad-slot/ad-slot.component';
+import { SeoService } from '../../core/seo/seo.service';
 import { GoogleDrivePdfPipe } from '../../shared/pipes/google-drive-pdf.pipe';
 
 @Component({
@@ -13,8 +15,10 @@ import { GoogleDrivePdfPipe } from '../../shared/pipes/google-drive-pdf.pipe';
   styleUrl: './download.page.scss'
 })
 export class DownloadPage implements OnInit, OnDestroy {
+  private readonly platformId = inject(PLATFORM_ID);
   private readonly route = inject(ActivatedRoute);
   private readonly pipe = new GoogleDrivePdfPipe();
+  private readonly seoService = inject(SeoService);
   private countdownIntervalId?: number;
   private readonly countdownDuration = 15;
   readonly ringRadius = 42;
@@ -37,6 +41,17 @@ export class DownloadPage implements OnInit, OnDestroy {
     this.description = params.get('desc') ?? '';
     this.rawUrl = params.get('url') ?? '';
     this.pdfUrl = this.pipe.transform(this.rawUrl);
+
+    this.seoService.updatePage({
+      title: this.title ? `${this.title} Download | Learn365Hub` : 'Download Notes | Learn365Hub',
+      description: this.description || 'Download educational PDF notes from Learn365Hub.',
+      path: 'download',
+      robots: 'noindex, nofollow'
+    });
+
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
 
     this.updateCountdownDisplay(this.countdownDuration);
 
