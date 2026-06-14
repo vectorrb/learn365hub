@@ -1,0 +1,22 @@
+<a mat-button routerLink="/">
+  <mat-icon>arrow_back</mat-icon>
+  Back to subjects
+</a>
+
+@if (subject$ | async; as subject) {
+  <header class="subject-header">
+    <h1>{{ subject.title }}</h1>
+    <p>{{ subject.description }}</p>
+  </header>
+
+  <app-ad-slot [adSlot]="'2233445566'"></app-ad-slot>
+
+  @if (notes$ | async; as notes) {
+    <app-notes-list [notes]="notes"></app-notes-list>
+  }
+} @else {
+  <mat-card appearance="outlined" class="empty-state">
+    <h2>Subject not found</h2>
+    <p>The selected subject is missing. Please check subjects.json and routing id.</p>
+  </mat-card>
+}

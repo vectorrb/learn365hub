@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Solutions",
+    "description": "Numerical-heavy notes with solved examples.",
+    "tags": ["chapter1", "numericals"],
+    "downloadLink": "https://drive.google.com/file/d/CHEM12_SOLUTIONS/view"
+  },
+  {
+    "id": 2,
+    "title": "Amines",
+    "description": "Reaction mechanisms and memory maps for revision.",
+    "tags": ["chapter13", "organic"],
+    "downloadLink": "https://drive.google.com/file/d/CHEM12_AMINES/view"
+  }
+]

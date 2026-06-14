@@ -1,0 +1,30 @@
+[
+  {
+    "id": "physics-11",
+    "title": "Physics Class 11",
+    "description": "Notes and resources for Class 11 Physics.",
+    "subject": "Physics",
+    "tags": ["Mechanics", "Units", "Motion"]
+  },
+  {
+    "id": "physics-12",
+    "title": "Physics Class 12",
+    "description": "Chapter-wise notes for Class 12 Physics.",
+    "subject": "Physics",
+    "tags": ["Electrostatics", "Optics", "Modern Physics"]
+  },
+  {
+    "id": "chemistry-11",
+    "title": "Chemistry Class 11",
+    "description": "Core chemistry notes for Class 11 learners.",
+    "subject": "Chemistry",
+    "tags": ["Atomic Structure", "Bonding", "Thermodynamics"]
+  },
+  {
+    "id": "chemistry-12",
+    "title": "Chemistry Class 12",
+    "description": "Exam-focused resources for Class 12 Chemistry.",
+    "subject": "Chemistry",
+    "tags": ["Organic", "Coordination", "Biomolecules"]
+  }
+]

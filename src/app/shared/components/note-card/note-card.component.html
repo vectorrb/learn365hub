@@ -1,0 +1,27 @@
+<mat-card class="note-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ note.title }}</mat-card-title>
+    <mat-card-subtitle>{{ note.description }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <mat-chip-set>
+      @for (tag of note.tags; track tag) {
+        <mat-chip>{{ tag }}</mat-chip>
+      }
+    </mat-chip-set>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a
+      mat-flat-button
+      color="primary"
+      [href]="note.downloadLink"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <mat-icon>open_in_new</mat-icon>
+      Open PDF
+    </a>
+  </mat-card-actions>
+</mat-card>

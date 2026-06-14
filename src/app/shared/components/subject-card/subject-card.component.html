@@ -1,0 +1,19 @@
+<mat-card class="subject-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title>{{ subject.title }}</mat-card-title>
+    <mat-card-subtitle>{{ subject.subject }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{ subject.description }}</p>
+    <mat-chip-set>
+      @for (tag of subject.tags; track tag) {
+        <mat-chip>{{ tag }}</mat-chip>
+      }
+    </mat-chip-set>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <a mat-flat-button [routerLink]="['/subject', subject.id]">View Notes</a>
+  </mat-card-actions>
+</mat-card>

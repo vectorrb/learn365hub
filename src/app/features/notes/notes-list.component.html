@@ -1,0 +1,5 @@
+<section class="notes-grid" aria-label="Subject notes list">
+  @for (note of notes; track note.id) {
+    <app-note-card [note]="note"></app-note-card>
+  }
+</section>

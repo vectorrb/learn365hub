@@ -1,0 +1,34 @@
+<mat-toolbar class="topbar">
+  <a class="brand" routerLink="/">
+    <img
+      class="brand-logo"
+      src="assets/img/home-page-logo.png"
+      alt="Learn365Hub logo"
+    />
+    <span>Learn365Hub</span>
+  </a>
+</mat-toolbar>
+
+<main class="page-shell">
+  <aside class="side-ad side-ad-left" aria-label="Left advertisement column">
+    <app-ad-slot [adSlot]="'3001002001'"></app-ad-slot>
+    <app-ad-slot [adSlot]="'3001002002'"></app-ad-slot>
+  </aside>
+
+  <section class="main-content" aria-label="Main content">
+    <router-outlet></router-outlet>
+  </section>
+
+  <aside class="side-ad side-ad-right" aria-label="Right advertisement column">
+    <app-ad-slot [adSlot]="'3001002003'"></app-ad-slot>
+    <app-ad-slot [adSlot]="'3001002004'"></app-ad-slot>
+  </aside>
+</main>
+
+<section class="mobile-ad-row" aria-label="Mobile advertisement row">
+  <app-ad-slot [adSlot]="'3001002005'"></app-ad-slot>
+</section>
+
+<footer class="footer">
+  <p>Copyright {{ 2026 }} Learn365Hub. All rights reserved.</p>
+</footer>

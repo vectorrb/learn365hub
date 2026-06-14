@@ -1,0 +1,25 @@
+<section class="hero">
+  <div>
+    <p class="hero-badge">Learn365Hub</p>
+    <h1>Curated notes that help you revise faster.</h1>
+    <p class="hero-copy">
+      Explore chapter-wise Physics and Chemistry notes for Classes 11 and 12.
+      Add new subjects later with only JSON updates.
+    </p>
+  </div>
+  <mat-icon class="hero-icon" fontIcon="auto_stories"></mat-icon>
+</section>
+
+<app-ad-slot></app-ad-slot>
+
+<section class="subject-grid" aria-label="Available subjects">
+  @if (subjects$ | async; as subjects) {
+    @for (subject of subjects; track subject.id) {
+      <app-subject-card [subject]="subject"></app-subject-card>
+    }
+  }
+</section>
+
+<section class="bottom-ad-row" aria-label="Sponsored resources">
+  <app-ad-slot [adSlot]="'7788990011'"></app-ad-slot>
+</section>
