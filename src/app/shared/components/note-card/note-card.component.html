@@ -16,11 +16,11 @@
     <a
       mat-flat-button
       color="primary"
-      [routerLink]="['/download']"
+      [routerLink]="['/view-pdf']"
       [queryParams]="{ url: note.downloadLink, title: note.title, desc: note.description }"
     >
-      <mat-icon>download</mat-icon>
-      Download PDF
+      <mat-icon>visibility</mat-icon>
+      View PDF
     </a>
   </mat-card-actions>
 </mat-card>

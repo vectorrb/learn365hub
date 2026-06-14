@@ -174,12 +174,52 @@ Create `public/vercel.json` with:
 
 ---
 
+## SEO After Deploy
+
+This project now includes:
+
+- prerendered HTML for the home page and subject pages
+- route-specific title and meta description tags
+- canonical URLs
+- `robots.txt`
+- `sitemap.xml`
+
+Before going live on a real domain, make sure the final production domain is updated in all of these files:
+
+- `src/app/core/seo/site.config.ts`
+- `public/robots.txt`
+- `public/sitemap.xml`
+
+After deployment, verify these URLs in the browser:
+
+- `https://yourdomain.com/`
+- `https://yourdomain.com/subject/physics-11`
+- `https://yourdomain.com/robots.txt`
+- `https://yourdomain.com/sitemap.xml`
+
+Then complete Google Search Console setup:
+
+1. Add your final domain as a property in Google Search Console.
+2. Verify ownership using DNS.
+3. Submit `https://yourdomain.com/sitemap.xml`.
+4. Request indexing for the home page and main subject pages.
+
+For ongoing SEO rules and content-maintenance guidance, see `seo.md`.
+
+---
+
 ## Environment Pre-flight Checklist Before Going Live
 
 - [ ] Replace `ca-pub-XXXXXXXXXXXXXXXX` with real AdSense publisher ID in `src/index.html` and `google-ads.service.ts`
 - [ ] Replace placeholder ad slot IDs in `app.html` and `subject.page.html`
 - [ ] Update `public/ads.txt` with real publisher ID
 - [ ] Replace placeholder Google Drive links in all subject JSON files with real file IDs
+- [ ] Update the final production domain in `src/app/core/seo/site.config.ts`
+- [ ] Update the final production domain in `public/robots.txt` and `public/sitemap.xml`
 - [ ] Enable HTTPS at your hosting provider
-- [ ] Test all routes manually: `/`, `/subject/physics-11`, `/subject/chemistry-12`
+- [ ] Verify `https://yourdomain.com/robots.txt` loads correctly after deploy
+- [ ] Verify `https://yourdomain.com/sitemap.xml` loads correctly after deploy
+- [ ] Submit the sitemap in Google Search Console
+- [ ] Test all routes manually: `/`, `/subject/physics-11`, `/subject/chemistry-12`, `/view-pdf`
+- [ ] Confirm prerendered pages contain correct title and description tags
 - [ ] Test on mobile, tablet, and desktop

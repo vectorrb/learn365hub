@@ -1,0 +1,15 @@
+<section class="viewer-shell" aria-label="Embedded PDF viewer">
+  <iframe
+    class="viewer-frame"
+    [src]="safePreviewUrl"
+    [title]="title || 'Embedded PDF viewer'"
+    loading="lazy"
+    referrerpolicy="strict-origin-when-cross-origin"
+    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+  ></iframe>
+
+  <p class="viewer-fallback">
+    If the embedded viewer does not load, open it in
+    <a [href]="previewUrl" target="_blank" rel="noopener noreferrer">Google Drive preview</a>.
+  </p>
+</section>

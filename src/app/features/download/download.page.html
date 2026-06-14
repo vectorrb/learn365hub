@@ -1,4 +1,4 @@
-<div class="download-page">
+<div class="view-pdf-page">
 
   <div class="note-info">
     <h1 class="note-title">{{ title }}</h1>
@@ -25,26 +25,17 @@
         <span #countdownNumber class="timer-number">15</span>
       </div>
       <p class="countdown-msg">
-        Your download link will be ready in
+        Your PDF viewer will be ready in
         <strong #countdownStrong>15 seconds</strong>…
       </p>
-      <p class="countdown-sub">Please wait while the page loads</p>
+      <p class="countdown-sub">Please wait while the protected viewer loads</p>
     </div>
 
-    <div #downloadReady class="download-ready" hidden>
+    <div #viewerReady class="viewer-ready" hidden>
       <mat-icon class="check-icon">check_circle</mat-icon>
-      <p class="ready-msg">Your download is ready!</p>
-      <p class="ready-sub">Use the button below to downlaod the PDF.</p>
-      <a
-        mat-flat-button
-        color="primary"
-        [href]="pdfUrl"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <mat-icon>download</mat-icon>
-        Download PDF
-      </a>
+      <p class="ready-msg">Your PDF is ready to view.</p>
+      <p class="ready-sub">The embedded viewer is shown below.</p>
+      <app-pdf-viewer [url]="rawUrl" [title]="title"></app-pdf-viewer>
     </div>
   </div>
 

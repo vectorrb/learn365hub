@@ -20,7 +20,7 @@ export const serverRoutes: ServerRoute[] = [
     }
   },
   {
-    path: 'download',
+    path: 'view-pdf',
     renderMode: RenderMode.Client,
   },
   {

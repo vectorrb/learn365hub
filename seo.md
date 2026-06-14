@@ -8,7 +8,7 @@ This project now includes a working SEO baseline for Google indexing.
 - Site-level constants are defined in `src/app/core/seo/site.config.ts`
 - Static SEO assets are published from `public/robots.txt` and `public/sitemap.xml`
 - Angular SSR/prerender is enabled for the home page and all subject pages
-- The `/download` route is marked `noindex, nofollow`
+- The `/view-pdf` route is marked `noindex, nofollow`
 
 ## Current Domain
 
@@ -34,7 +34,7 @@ The build prerenders these routes:
 - `/subject/chemistry-11`
 - `/subject/chemistry-12`
 
-The `/download` page should not be indexed.
+The `/view-pdf` page should not be indexed.
 
 ## Metadata Included
 

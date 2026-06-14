@@ -24,9 +24,9 @@ export const routes: Routes = [
     title: subjectTitleResolver
   },
   {
-    path: 'download',
-    loadComponent: () => import('./features/download/download.page').then((m) => m.DownloadPage),
-    title: 'Download Notes | Learn365Hub'
+    path: 'view-pdf',
+    loadComponent: () => import('./features/download/download.page').then((m) => m.ViewPdfPage),
+    title: 'View PDF | Learn365Hub'
   },
   {
     path: '**',
