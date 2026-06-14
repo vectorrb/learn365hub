@@ -1,0 +1,146 @@
+.download-page {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.note-info {
+  text-align: center;
+
+  .note-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+
+  .note-desc {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+  }
+}
+
+.ad-slot {
+  width: 100%;
+}
+
+.countdown-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.countdown-box[hidden],
+.download-ready[hidden] {
+  display: none !important;
+}
+
+.countdown-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  background: #fafafa;
+  width: 100%;
+  max-width: 400px;
+
+  .timer-ring {
+    width: 96px;
+    height: 96px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timer-ring-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.12));
+  }
+
+  .timer-ring-track,
+  .timer-ring-progress {
+    fill: none;
+    stroke-width: 8;
+  }
+
+  .timer-ring-track {
+    stroke: #e3f2fd;
+  }
+
+  .timer-ring-progress {
+    stroke: #1976d2;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear;
+  }
+
+  .timer-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1976d2;
+    background: #fff;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    box-shadow: inset 0 0 0 1px #d9e5f2;
+  }
+
+  .countdown-msg {
+    font-size: 1rem;
+    text-align: center;
+    margin: 0;
+  }
+
+  .countdown-sub {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+  }
+}
+
+.download-ready {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid #c8e6c9;
+  border-radius: 12px;
+  background: #f1f8e9;
+  width: 100%;
+  max-width: 400px;
+
+  .check-icon {
+    font-size: 3rem;
+    width: 3rem;
+    height: 3rem;
+    color: #388e3c;
+  }
+
+  .ready-msg {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    color: #2e7d32;
+  }
+
+  .ready-sub {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0;
+    color: #4e6b50;
+  }
+}

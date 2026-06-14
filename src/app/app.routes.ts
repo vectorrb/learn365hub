@@ -12,6 +12,11 @@ export const routes: Routes = [
     title: 'Learn365Hub | Subject Notes'
   },
   {
+    path: 'download',
+    loadComponent: () => import('./features/download/download.page').then((m) => m.DownloadPage),
+    title: 'Learn365Hub | Download'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

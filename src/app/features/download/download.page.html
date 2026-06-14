@@ -1,0 +1,53 @@
+<div class="download-page">
+
+  <div class="note-info">
+    <h1 class="note-title">{{ title }}</h1>
+    <p class="note-desc">{{ description }}</p>
+  </div>
+
+  <app-ad-slot class="ad-slot" />
+
+  <div class="countdown-section">
+    <div #countdownBox class="countdown-box">
+      <div class="timer-ring">
+        <svg class="timer-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
+          <circle class="timer-ring-track" cx="50" cy="50" [attr.r]="ringRadius"></circle>
+          <circle
+            #timerProgress
+            class="timer-ring-progress"
+            cx="50"
+            cy="50"
+            [attr.r]="ringRadius"
+            [attr.stroke-dasharray]="ringCircumference"
+            [attr.stroke-dashoffset]="0"
+          ></circle>
+        </svg>
+        <span #countdownNumber class="timer-number">15</span>
+      </div>
+      <p class="countdown-msg">
+        Your download link will be ready in
+        <strong #countdownStrong>15 seconds</strong>…
+      </p>
+      <p class="countdown-sub">Please wait while the page loads</p>
+    </div>
+
+    <div #downloadReady class="download-ready" hidden>
+      <mat-icon class="check-icon">check_circle</mat-icon>
+      <p class="ready-msg">Your download is ready!</p>
+      <p class="ready-sub">Use the button below to downlaod the PDF.</p>
+      <a
+        mat-flat-button
+        color="primary"
+        [href]="pdfUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <mat-icon>download</mat-icon>
+        Download PDF
+      </a>
+    </div>
+  </div>
+
+  <app-ad-slot class="ad-slot" />
+
+</div>

@@ -16,12 +16,11 @@
     <a
       mat-flat-button
       color="primary"
-      [href]="note.downloadLink"
-      target="_blank"
-      rel="noopener noreferrer"
+      [routerLink]="['/download']"
+      [queryParams]="{ url: note.downloadLink, title: note.title, desc: note.description }"
     >
-      <mat-icon>open_in_new</mat-icon>
-      Open PDF
+      <mat-icon>download</mat-icon>
+      Download PDF
     </a>
   </mat-card-actions>
 </mat-card>
