@@ -4,13 +4,21 @@
     "title": "Atomic Structure",
     "description": "Complete chapter notes with periodic trends.",
     "tags": ["chapter2", "conceptual"],
-    "downloadLink": "https://drive.google.com/file/d/CHEM11_ATOMIC_STRUCTURE/view"
+    "resources": {
+      "handwrittenNotes": "https://drive.google.com/file/d/CHEM11_ATOMIC_STRUCTURE/view",
+      "digitalizedNotes": "",
+      "flowchart": ""
+    }
   },
   {
     "id": 2,
     "title": "Chemical Bonding",
     "description": "VSEPR, MOT, and hybridization quick-reference notes.",
     "tags": ["chapter4", "bonding"],
-    "downloadLink": "https://drive.google.com/file/d/CHEM11_BONDING/view"
+    "resources": {
+      "handwrittenNotes": "https://drive.google.com/file/d/CHEM11_BONDING/view",
+      "digitalizedNotes": "",
+      "flowchart": ""
+    }
   }
 ]

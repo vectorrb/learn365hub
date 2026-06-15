@@ -31,13 +31,18 @@ export class ViewPdfPage implements OnInit, OnDestroy {
 
   title = '';
   description = '';
+  resourceType = '';
   rawUrl = '';
+  isComingSoon = false;
 
   ngOnInit(): void {
     const params = this.route.snapshot.queryParamMap;
     this.title = params.get('title') ?? '';
     this.description = params.get('desc') ?? '';
-    this.rawUrl = params.get('url') ?? '';
+    this.resourceType = params.get('type') ?? 'Notes';
+    const normalizedUrl = (params.get('url') ?? '').trim();
+    this.rawUrl = normalizedUrl;
+    this.isComingSoon = normalizedUrl.length === 0 || normalizedUrl === 'null' || normalizedUrl === 'undefined';
 
     this.seoService.updatePage({
       title: this.title ? `${this.title} View PDF | Learn365Hub` : 'View PDF | Learn365Hub',
@@ -46,7 +51,7 @@ export class ViewPdfPage implements OnInit, OnDestroy {
       robots: 'noindex, nofollow'
     });
 
-    if (!isPlatformBrowser(this.platformId)) {
+    if (!isPlatformBrowser(this.platformId) || this.isComingSoon) {
       return;
     }
 

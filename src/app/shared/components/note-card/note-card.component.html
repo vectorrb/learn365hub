@@ -13,14 +13,16 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <a
-      mat-flat-button
-      color="primary"
-      [routerLink]="['/view-pdf']"
-      [queryParams]="{ url: note.downloadLink, title: note.title, desc: note.description }"
-    >
-      <mat-icon>visibility</mat-icon>
-      View PDF
-    </a>
+    @for (resource of resourceButtons; track resource.key) {
+      <a
+        mat-flat-button
+        class="resource-btn {{ resource.className }}"
+        [routerLink]="['/view-pdf']"
+        [queryParams]="{ url: getResourceLink(resource.key), title: note.title, desc: note.description, type: resource.label }"
+      >
+        <mat-icon>{{ resource.icon }}</mat-icon>
+        {{ resource.label }}
+      </a>
+    }
   </mat-card-actions>
 </mat-card>

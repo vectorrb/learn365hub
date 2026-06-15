@@ -7,6 +7,44 @@
     />
     <span>Learn365Hub</span>
   </a>
+
+  <span class="topbar-spacer" aria-hidden="true"></span>
+
+  <button class="nav-toggle" type="button" aria-label="Toggle navigation menu" [attr.aria-expanded]="isMobileNavOpen" (click)="toggleMobileNav($event)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="top-nav" aria-label="Class and chapter navigation" [class.mobile-open]="isMobileNavOpen">
+    @if (navClasses(); as navClasses) {
+      @for (classItem of navClasses; track trackClass($index, classItem)) {
+        <details class="class-menu">
+          <summary>{{ classItem.title }}</summary>
+
+          <div class="class-panel">
+            @for (subject of classItem.subjects; track subject.subjectId) {
+              <details class="subject-menu">
+                <summary>{{ subject.title }}</summary>
+
+                <div class="subject-panel">
+                  <a class="view-subject-link" [routerLink]="['/subject', subject.subjectId]" (click)="closeMobileNav()">View all {{ subject.title }} notes</a>
+
+                  <ul class="chapter-links">
+                    @for (chapter of subject.chapters; track chapter.id) {
+                      <li>
+                        <a [routerLink]="['/view-pdf']" [queryParams]="chapter.queryParams" (click)="closeMobileNav()">{{ chapter.title }}</a>
+                      </li>
+                    }
+                  </ul>
+                </div>
+              </details>
+            }
+          </div>
+        </details>
+      }
+    }
+  </nav>
 </mat-toolbar>
 
 <main class="page-shell">

@@ -4,4 +4,49 @@
 
 mat-card-actions {
   padding: 0 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+mat-card-actions a {
+  flex: 1 1 180px;
+}
+
+.resource-btn {
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.resource-handwritten {
+  background: #fde68a;
+  color: #78350f;
+}
+
+.resource-handwritten:hover {
+  background: #fcd34d;
+}
+
+.resource-digitalized {
+  background: #bfdbfe;
+  color: #1e3a8a;
+}
+
+.resource-digitalized:hover {
+  background: #93c5fd;
+}
+
+.resource-flowchart {
+  background: #bbf7d0;
+  color: #14532d;
+}
+
+.resource-flowchart:hover {
+  background: #86efac;
+}
+
+@media (max-width: 560px) {
+  mat-card-actions a {
+    flex-basis: 100%;
+  }
 }

@@ -1,6 +1,7 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { AsyncPipe } from '@angular/common';
+import { map } from 'rxjs';
 
 import { ResourceDataService } from '../../core/services/resource-data.service';
 import { SeoService } from '../../core/seo/seo.service';
@@ -17,6 +18,16 @@ export class HomePage {
   private readonly resourceDataService = inject(ResourceDataService);
   private readonly seoService = inject(SeoService);
   readonly subjects$ = this.resourceDataService.getSubjects();
+  readonly currentQuote$ = this.resourceDataService.getQuotes().pipe(
+    map((quotes) => {
+      if (quotes.length === 0) {
+        return undefined;
+      }
+
+      const quoteIndex = this.getDailyQuoteIndex(quotes.length);
+      return quotes[quoteIndex];
+    })
+  );
 
   constructor() {
     this.seoService.updatePage({
@@ -24,5 +35,13 @@ export class HomePage {
       description: 'Explore curated Physics and Chemistry notes for Class 11 and Class 12 learners, organized subject-wise for faster revision.',
       path: ''
     });
+  }
+
+  private getDailyQuoteIndex(totalQuotes: number): number {
+    const now = new Date();
+    const localMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const dayNumber = Math.floor(localMidnight.getTime() / 86400000);
+
+    return dayNumber % totalQuotes;
   }
 }

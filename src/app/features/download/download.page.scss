@@ -22,6 +22,18 @@
     color: #666;
     margin: 0;
   }
+
+  .note-type {
+    margin-top: 0.75rem;
+    display: inline-block;
+    background: #eff6ff;
+    color: #1e3a8a;
+    border: 1px solid #bfdbfe;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.35rem 0.9rem;
+  }
 }
 
 .ad-slot {
@@ -34,6 +46,8 @@
   justify-content: center;
 }
 
+.countdown-section[hidden],
+.coming-soon-state[hidden],
 .countdown-box[hidden],
 .viewer-ready[hidden] {
   display: none !important;
@@ -142,6 +156,40 @@
     text-align: center;
     margin: 0;
     color: #4e6b50;
+  }
+}
+
+.coming-soon-state {
+  width: 100%;
+  max-width: 540px;
+  border: 1px solid #facc15;
+  border-radius: 12px;
+  background: #fffbeb;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+
+  .coming-soon-icon {
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 2.2rem;
+    color: #b45309;
+  }
+
+  .coming-soon-title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #92400e;
+  }
+
+  .coming-soon-sub {
+    margin: 0;
+    color: #78350f;
+    font-size: 0.95rem;
   }
 }
 

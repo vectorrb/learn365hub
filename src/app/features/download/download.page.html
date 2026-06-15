@@ -3,11 +3,12 @@
   <div class="note-info">
     <h1 class="note-title">{{ title }}</h1>
     <p class="note-desc">{{ description }}</p>
+    <p class="note-type">{{ resourceType }}</p>
   </div>
 
   <app-ad-slot class="ad-slot" />
 
-  <div class="countdown-section">
+  <div class="countdown-section" [hidden]="isComingSoon">
     <div #countdownBox class="countdown-box">
       <div class="timer-ring">
         <svg class="timer-ring-svg" viewBox="0 0 100 100" aria-hidden="true">
@@ -37,6 +38,12 @@
       <p class="ready-sub">The embedded viewer is shown below.</p>
       <app-pdf-viewer [url]="rawUrl" [title]="title"></app-pdf-viewer>
     </div>
+  </div>
+
+  <div class="coming-soon-state" [hidden]="!isComingSoon">
+    <mat-icon class="coming-soon-icon">schedule</mat-icon>
+    <p class="coming-soon-title">This {{ resourceType.toLowerCase() }} is coming soon.</p>
+    <p class="coming-soon-sub">Please check again after a few days for the uploaded file.</p>
   </div>
 
   <app-ad-slot class="ad-slot" />

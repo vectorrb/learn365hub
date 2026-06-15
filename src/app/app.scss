@@ -8,10 +8,10 @@
   position: sticky;
   top: 0;
   z-index: 10;
-  backdrop-filter: blur(10px);
-  background: rgb(255 255 255 / 85%);
-  border-bottom: 1px solid rgb(2 132 199 / 15%);
+  background: #ffffff;
+  border-bottom: 1px solid #dbe4ee;
   height: 68px;
+  gap: 12px;
 }
 
 .brand {
@@ -22,6 +22,139 @@
   color: #0b3b66;
   font-weight: 700;
   letter-spacing: 0.02em;
+}
+
+.topbar-spacer {
+  flex: 1;
+}
+
+.top-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-toggle {
+  display: none;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: #1f2937;
+  margin: 4px 0;
+}
+
+.class-menu,
+.subject-menu {
+  position: relative;
+}
+
+.class-menu > summary,
+.subject-menu > summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.class-menu > summary {
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: #1f2937;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 8px 14px;
+}
+
+.class-menu > summary:hover,
+.class-menu[open] > summary {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.class-menu > summary::-webkit-details-marker,
+.subject-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.class-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  width: min(420px, 86vw);
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgb(15 23 42 / 12%);
+  padding: 10px;
+  display: none;
+  gap: 8px;
+}
+
+.class-menu[open] > .class-panel,
+.class-menu:hover > .class-panel {
+  display: grid;
+}
+
+.subject-menu {
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.subject-menu > summary {
+  font-weight: 600;
+  color: #334155;
+  background: #f9fafb;
+  padding: 10px 12px;
+}
+
+.subject-panel {
+  padding: 8px 12px 12px;
+}
+
+.view-subject-link {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #1d4ed8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.view-subject-link:hover {
+  text-decoration: underline;
+}
+
+.chapter-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.chapter-links a {
+  display: block;
+  text-decoration: none;
+  color: #0f172a;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 0.9rem;
+}
+
+.chapter-links a:hover {
+  background: #f8fafc;
 }
 
 .brand-logo {
@@ -98,6 +231,62 @@
 }
 
 @media (max-width: 767px) {
+  .topbar {
+    min-height: 68px;
+    height: auto;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-wrap: wrap;
+  }
+
+  .topbar-spacer {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: inline-block;
+    margin-left: auto;
+  }
+
+  .top-nav {
+    display: none;
+    width: 100%;
+    overflow: visible;
+    padding-top: 8px;
+    padding-bottom: 2px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .top-nav.mobile-open {
+    display: flex;
+  }
+
+  .class-menu {
+    position: static;
+  }
+
+  .class-menu > summary {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .class-panel {
+    position: static;
+    width: min(560px, calc(100vw - 2rem));
+    margin-top: 8px;
+  }
+
+  .class-menu:hover > .class-panel {
+    display: none;
+  }
+
+  .class-menu[open] > .class-panel {
+    display: grid;
+  }
+
   .mobile-ad-row {
     display: block;
     width: min(1140px, calc(100% - 1.5rem));

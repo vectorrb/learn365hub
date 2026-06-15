@@ -1,0 +1,52 @@
+[
+  {
+    "counter": 1,
+    "message": "Success is the sum of small efforts, repeated day in and day out.",
+    "author": "Robert Collier"
+  },
+  {
+    "counter": 2,
+    "message": "The future depends on what you do today.",
+    "author": "Mahatma Gandhi"
+  },
+  {
+    "counter": 3,
+    "message": "It always seems impossible until it's done.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "counter": 4,
+    "message": "Genius is one percent inspiration and ninety-nine percent perspiration.",
+    "author": "Thomas Edison"
+  },
+  {
+    "counter": 5,
+    "message": "Our greatest weakness lies in giving up.",
+    "author": "Thomas Edison"
+  },
+  {
+    "counter": 6,
+    "message": "The important thing is not to stop questioning.",
+    "author": "Albert Einstein"
+  },
+  {
+    "counter": 7,
+    "message": "Learn from yesterday, live for today, hope for tomorrow.",
+    "author": "Albert Einstein"
+  },
+  {
+    "counter": 8,
+    "message": "You never fail until you stop trying.",
+    "author": "Albert Einstein"
+  },
+  {
+    "counter": 9,
+    "message": "Education is the most powerful weapon which you can use to change the world.",
+    "author": "Nelson Mandela"
+  },
+  {
+    "counter": 10,
+    "message": "The expert in anything was once a beginner.",
+    "author": "Helen Hayes"
+  }
+]

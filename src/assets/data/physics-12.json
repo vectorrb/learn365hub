@@ -4,13 +4,21 @@
     "title": "Electric Charges and Fields",
     "description": "Detailed revision notes with derivations.",
     "tags": ["chapter1", "electrostatics"],
-    "downloadLink": "https://drive.google.com/file/d/PHYSICS12_ELECTROSTATICS/view"
+    "resources": {
+      "handwrittenNotes": "https://drive.google.com/file/d/PHYSICS12_ELECTROSTATICS/view",
+      "digitalizedNotes": "",
+      "flowchart": ""
+    }
   },
   {
     "id": 2,
     "title": "Ray Optics",
     "description": "Formula summary and solved conceptual questions.",
     "tags": ["chapter9", "optics"],
-    "downloadLink": "https://drive.google.com/file/d/PHYSICS12_OPTICS/view"
+    "resources": {
+      "handwrittenNotes": "https://drive.google.com/file/d/PHYSICS12_OPTICS/view",
+      "digitalizedNotes": "",
+      "flowchart": ""
+    }
   }
 ]

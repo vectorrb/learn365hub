@@ -4,13 +4,21 @@
     "title": "Units and Measurements",
     "description": "Complete chapter notes with solved examples.",
     "tags": ["chapter1", "important"],
-    "downloadLink": "https://drive.google.com/file/d/PHYSICS11_UNIT_MEASURE/view"
+    "resources": {
+      "handwrittenNotes": "https://drive.google.com/file/d/PHYSICS11_UNIT_MEASURE/view",
+      "digitalizedNotes": "",
+      "flowchart": ""
+    }
   },
   {
     "id": 2,
     "title": "Laws of Motion",
     "description": "Concise notes for Newton laws and free body diagrams.",
     "tags": ["chapter5", "mechanics"],
-    "downloadLink": "https://drive.google.com/file/d/PHYSICS11_LOM/view"
+    "resources": {
+      "handwrittenNotes": "https://drive.google.com/file/d/PHYSICS11_LOM/view",
+      "digitalizedNotes": "",
+      "flowchart": ""
+    }
   }
 ]
